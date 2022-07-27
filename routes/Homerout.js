@@ -6,7 +6,12 @@ const { orders } = require('../db/models');
 router.route('/')
   .get(async (req, res) => {
     const orderList = await orders.findAll();
-    res.renderComponent(userHome, { list: orderList});
+    if (req.session.user) {
+      const { user } = req.session;
+      res.renderComponent(userHome, { list: orderList, user: user[0].name });
+    } else {
+      res.renderComponent(userHome, { list: orderList, user: null });
+    }
   });
 
 module.exports = router;

@@ -4,10 +4,6 @@ const Layout = require('./Layout');
 module.exports = function Reg({ title }) {
   return (
     <Layout title={title}>
-      <head>
-        <meta charSet="utf-8" />
-        <script defer src="/js/script.js" />
-      </head>
       <body>
         <div className="container regologo-wrap">
           <header>

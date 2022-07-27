@@ -15,19 +15,21 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const { name, email, password, phone } = req.body;
+  const { email, password } = req.body;
 
-  const user = await users.create({
-    name,
-    email,
-    password,
-    phone,
+  const user = await users.findAll({
+    where: {
+      email,
+      password,
+    },
   });
-
+  if (user.length !== 0) {
+    req.session.user = user;
+    // res.json({ login: true, route: '/' });
+  } else {
+    // res.status(403).json({ login: false, message: 'This email is not used in the system' });
+  }
   res.redirect('/');
-
-  // req.session.user = 'test_user';
-  // res.status(201).json({ registration: true });
 });
 
 module.exports = router;
