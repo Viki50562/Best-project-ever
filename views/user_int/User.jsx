@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function userHome() {
+module.exports = function userHome({ list }) {
   return (
     <Layout>
       <main>
@@ -10,6 +10,11 @@ module.exports = function userHome() {
             <img src="" className="card-img-top" alt="" />
             <div className="card-body">
               <h3><a href="#" className="ct">Куча хавки</a></h3>
+              <form action="/card">
+                <ul>
+                  { list.map((card) => <li>{card.img}</li>) }
+                </ul>
+              </form>
               <p className="card-text">Некоторые мудилы заказали кучу хавки и отказались</p>
               <a href="#" className="btn btn-primary center">Выкупить </a>
             </div>
