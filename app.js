@@ -14,8 +14,6 @@ app.use('/', homeRouter);
 // app.use('/card', cardRouter);
 app.use('/reg', regRouter);
 
-
 app.listen(PORT, () => {
-  console.log(`Server started at ${PORT} port`)
-})
-
+  console.log(`Server started at ${PORT} port`);
+});
