@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function userHome({ list }) {
+module.exports = function userHome({ list, user }) {
   return (
-    <Layout>
+    <Layout user={user}>
       <main>
         <div className="user-home">
           <div className="card" style={{ width: '18rem' }}>

@@ -17,7 +17,7 @@
     right:20px;
     top: 20px;
     display: flex;
-     
+    align-items: center;
 } 
 
 .btn{
@@ -58,4 +58,35 @@ main{
 .ct{
 
 
+}
+
+#logo-link {
+  text-decoration: none;
+  color:black;
+}
+
+#logo-link:hover {
+  color:black;
+}
+
+.regologo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+}
+
+#reg-form {
+  min-width: 400px; 
+  margin: 20px 0;
+}
+
+#reg-form .btn {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.hello {
+  margin: 0 20px 0 0;
+  color: black;
 }
