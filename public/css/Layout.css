@@ -1,0 +1,61 @@
+*{
+     margin: 0px 0px;
+    padding: 0px;
+    top:0px ;
+}
+
+.header{
+    position: relative ;
+    display: flex;
+    height: 80px;
+    bottom: 100%;
+    background-color: rgb(105, 177, 199) ;
+}
+
+.auth{
+    position: absolute;
+    right:20px;
+    top: 20px;
+    display: flex;
+     
+} 
+
+.btn{
+    margin: 0px 12px;
+}
+
+.logo{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+main{
+    margin: 20px 150px
+}
+.user-home{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin:  10px 30px;
+    width: 30%;
+}
+.center{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+.card-img-top{
+    max-width: 300px ;
+    max-height: 190px;
+}
+
+.ct{
+
+
+}
