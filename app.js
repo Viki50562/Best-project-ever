@@ -1,5 +1,4 @@
 require('@babel/register');
-
 const express = require('express');
 const config = require('./config/config');
 // const cardRouter = require('./routes/Card');
@@ -17,3 +16,4 @@ app.use('/', homeRouter);
 app.listen(PORT, () => {
   console.log(`Сервер работает на ${PORT} порту.`)
 })
+
