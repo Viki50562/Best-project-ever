@@ -17,7 +17,7 @@
     right:20px;
     top: 20px;
     display: flex;
-     
+    align-items: center;
 } 
 
 .btn{
@@ -86,3 +86,7 @@ main{
   margin-top: 20px;
 }
 
+.hello {
+  margin: 0 20px 0 0;
+  color: black;
+}

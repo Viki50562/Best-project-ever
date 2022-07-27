@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Layout({ title, children }) {
+module.exports = function Layout({ title, user, children }) {
   return (
     <html lang="en">
       <head>
@@ -16,10 +16,17 @@ module.exports = function Layout({ title, children }) {
       <body>
         <header className="header">
           <a href="/" id="logo-link"><h1 className="logo">Dosta-v-O4ko!</h1></a>
-          <div className="auth">
-            <a href="/reg"><button type="button" className="btn btn-dark ">Rega</button></a>
-            <button type="button" className="btn btn-dark">Loga</button>
-          </div>
+          {user ? (
+            <div className="auth">
+              <p className="hello">{user} тута</p>
+              <a href="/logout"><button type="button" className="btn btn-dark">Выйти</button></a>
+            </div>
+          ) : (
+            <div className="auth">
+              <a href="/reg"><button type="button" className="btn btn-dark ">Rega</button></a>
+              <a href="/log"><button type="button" className="btn btn-dark">Loga</button></a>
+            </div>
+          )}
         </header>
         {children}
       </body>
