@@ -1,6 +1,6 @@
 const React = require('react');
 
-function Layout({ title, children }) {
+module.exports = function Layout({ title, children }) {
   return (
     <html lang="en">
       <head>
