@@ -2,7 +2,7 @@ require('@babel/register');
 const express = require('express');
 const config = require('./config/config');
 // const cardRouter = require('./routes/Card');
-const userCards = require('./routes/home.route');
+const userList = require('./routes/userlist.route'); // поменяла!!!!!
 const regologoRouter = require('./routes/regologo.route');
 const bigCardRouter = require('./routes/bigcard.route');
 const adminRouter = require('./routes/admin.route');
@@ -12,7 +12,7 @@ const PORT = process.env.PORT ?? 3000;
 
 config(app);
 
-app.use('/', userCards);
+app.use('/', userList); // поменяла!!!!
 // app.use('/card', cardRouter);
 app.use('/', regologoRouter);
 app.use('/', bigCardRouter);

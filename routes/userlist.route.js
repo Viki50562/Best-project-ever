@@ -1,3 +1,4 @@
+// Главный роут (home page)
 const router = require('express').Router();
 
 const UserList = require('../views/user_int/UserList');
