@@ -3,7 +3,7 @@ module.exports = {
     await queryInterface.bulkInsert('orders', [
       { // указываем название модели и прокидываем наши значения колонок
         title: 'Кебаб',
-        img: 'блабла',
+        img: '/src/kebab.jpeg',
         location: 'Лондон',
         discription: 'Вкусняшка',
         price: 82,
@@ -14,7 +14,7 @@ module.exports = {
       },
       { // указываем название модели и прокидываем наши значения колонок
         title: 'Пицца',
-        img: 'миумиу',
+        img: '/src/pizza.jpeg',
         location: 'Осло',
         discription: 'Гадость гадкая',
         price: 72,
@@ -25,7 +25,7 @@ module.exports = {
       },
       { // указываем название модели и прокидываем наши значения колонок
         title: 'Бургеры',
-        img: 'миумиу',
+        img: '/src/burger.jpeg',
         location: 'Париж',
         discription: 'Супер бякость',
         price: 92,
@@ -36,7 +36,7 @@ module.exports = {
       },
       { // указываем название модели и прокидываем наши значения колонок
         title: 'Суп',
-        img: 'мякмяк',
+        img: '/src/supec.jpeg',
         location: 'Петербург',
         discription: 'Супер вкусно',
         price: 52,
