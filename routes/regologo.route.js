@@ -18,16 +18,33 @@ router.get('/reg', (req, res) => {
 
 router.post('/reg', async (req, res) => {
   const { name, email, password, phone } = req.body;
-  const user = await users.create({
+
+  const userInDb = await users.findAll({
+    where: {
+      email,
+    },
+  });
+
+  if (userInDb) {
+    
+  }
+
+  await users.create({
     name,
     email,
     password,
     phone,
   });
 
+  const user = await users.findAll({
+    where: {
+      email,
+      password,
+    },
+  });
+
+  req.session.user = user;
   res.redirect('/');
-  // req.session.user = 'test_user';
-  // res.status(201).json({ registration: true });
 });
 
 // Authorization routes
@@ -47,13 +64,7 @@ router.post('/log', async (req, res) => {
       password,
     },
   });
-  if (user.length !== 0) {
-    req.session.user = user;
-    // res.json({ login: true, route: '/' });
-  } else {
-    // res.status(403).json({ login: false, message: 'This email is not used in the system' });
-  }
-  res.redirect('/');
+  req.session.user = user;
 });
 
 // Logout routes
