@@ -1,7 +1,9 @@
 const regForm = document.querySelector('#reg-form');
+const logForm = document.querySelector('#log-form');
 const pass = document.querySelector('#password');
 const passCheck = document.querySelector('#password-check');
 const regBtn = document.querySelector('.reg-btn');
+const logBtn = document.querySelector('.log-btn');
 
 // слушатель рег-формы, если она есть (т.е. пользователь на рег-странице)
 if (regForm) {
@@ -37,6 +39,39 @@ if (regForm) {
       } else {
         window.location.href = '/';
       }
+    }
+  });
+}
+
+
+// слушатель лог-формы
+if (logForm) {
+  logForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // удаление надписи с ошибкой, если она осталась с прошлого раза
+    const paswErr = document.querySelector('.pasw-err');
+    if (paswErr) paswErr.remove();
+
+    // проверка пользователя
+    const { method, action, email, password } = event.target;
+
+    const response = await fetch(action, {
+      method,
+      headers: { 'Content-Type': 'Application/json' },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value,
+      }),
+    });
+
+    const data = await response.json();
+    console.log(data)
+    if (data.login === false) {
+      const errMsg = '<div class="alert alert-danger pasw-err">Не тот email или пароль, угадывай снова</div>';
+      logBtn.insertAdjacentHTML('beforebegin', errMsg);
+    } else {
+      window.location.href = '/';
     }
   });
 }

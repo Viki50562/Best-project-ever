@@ -1,4 +1,5 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
 
 const React = require('react');
 const ReactDomServer = require('react-dom/server');
@@ -31,15 +32,12 @@ router.post('/reg', async (req, res) => {
     await users.create({
       name,
       email,
-      password,
+      password: await bcrypt.hash(password, 10),
       phone,
     });
 
     const user = await users.findAll({
-      where: {
-        email,
-        password,
-      },
+      where: { email },
     });
 
     req.session.user = user;
@@ -59,12 +57,16 @@ router.post('/log', async (req, res) => {
   const { email, password } = req.body;
 
   const user = await users.findAll({
-    where: {
-      email,
-      password,
-    },
+    where: { email },
+    raw: true,
   });
-  req.session.user = user;
+
+  if (user && (await bcrypt.compare(password, user[0].password))) {
+    req.session.user = user;
+    res.json({ login: true });
+  } else {
+    res.json({ login: false });
+  }
 });
 
 // Logout routes
