@@ -110,3 +110,15 @@ max-width: 250px;
 right: 30%;
 
 }
+
+.newPrice{
+  
+
+  font-size: 40px;
+  color: aliceblue;
+  
+  height: 45px;
+  width: 55px;
+  background-color: rgb(201, 33, 4);
+  border-radius: 10%;
+}

@@ -1,34 +1,54 @@
-// Черновая развернутая карточка
-
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function card({ title, img, price }) {
+module.exports = function card({ Cards }) {
   return (
     <Layout>
-      <section className="card mb-3 container">
+      <div className="row g-0 bg-light position-relative">
 
-        <div className="row g-0 ">
-
-          <div className="col-md-4" />
-            <div className="col-md-8">
-
-              <img src="https://i.siteapi.org/u6vboZsEppeuVFTBP9ghkTvufgE=/0x0:645x900/ea46265fc7e95bc.ru.s.siteapi.org/img/9h08kb1pbgg0c4ow8w000wckgogwc4" className="img-big-card" alt={`photo-${card.id}`} />
-              
-              <div className="card-body big-card-info">
-
-                <h5 className="card-title">Куча хавки</h5>
-                <div>{ title }</div>
-                <div>{ img }</div>
-                <div>{ price }</div>
-                <p className="card-text">Некоторые мудилы зак!!!!!!!азали кучу хавки и отказались</p>
-                <p className="card-text"><small className="text-muted">15 мин назад, ещё тёплое</small></p>
-                <a href="/buy" className="btn btn-primary center">Выкупить </a>
-                <a href="/return" className="btn btn-primary center">Не хочу </a>
+        <div className="modal" tabIndex="-1">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Modal title</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              </div>
+              <div className="modal-body">
+                <p>Modal body text goes here.</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" className="btn btn-primary">Save changes</button>
               </div>
             </div>
+          </div>
         </div>
-      </section>
+
+        <div className="col-md-6 mb-md-0 p-md-4">
+          <img src={Cards.img} className="w-100" alt={`photo-${Cards.id}`} />
+        </div>
+        <div className="col-md-6 p-4 ps-md-0">
+          <h5 className="mt-0">{Cards.title}</h5>
+          <p>{Cards.discription}</p>
+          <div>
+            Цена без скидки:
+            <h5>
+              <s>
+                { Cards.price }
+                руб
+              </s>
+            </h5>
+          </div>
+
+          <div>
+            <h1 className="newPrice">{Cards.saleprice}</h1>
+            руб
+          </div>
+          <p className="card-text"><small className="text-muted">15 мин назад, ещё тёплое</small></p>
+          <a href="/buy" className="btn btn-primary center">Выкупить </a>
+          <a href="/return" className="btn btn-primary center">Не хочу </a>
+        </div>
+      </div>
     </Layout>
   );
 };

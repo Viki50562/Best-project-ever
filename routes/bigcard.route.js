@@ -3,23 +3,25 @@ const React = require('react');
 const ReactDomServer = require('react-dom/server');
 const router = require('express').Router();
 const Card = require('../views/user_int/Card');
-// const { orders } = require('../db/models');
-
+const { orders } = require('../db/models');
 
 // Если юзер авторизован
-
-router.get('/domoi', (req, res) => {
-  const bigCard = React.createElement(Card, { title: 'kzkz', img: 'dhhs', price: 'dshksdn' });
-  const html = ReactDomServer.renderToStaticMarkup(bigCard);
-  res.write('<!DOCTYPE html>');
-  res.end(html);
-});
+router.route('/usercard')
+  .get(async (req, res) => {
+    const card = await orders.findOne({ raw: true });
+    console.log(card);
+    if (req.session.user) {
+      const { user } = req.session;
+      res.renderComponent(Card, { Cards: card, user: user[0].name });
+    } else {
+      res.renderComponent(Card, { Cards: card, user: null });
+    }
+  });
 
 // Если юзер нажал "не хочу" в карточке
-router.get('/return', (req, res) => {
-  res.redirect('/')
+router.get('/', (req, res) => {
+  res.redirect('/');
 });
-
 
 // router.get('/cards/:id', async (req, res) => {
 //   const { id } = req.params;
