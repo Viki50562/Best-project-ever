@@ -2,7 +2,7 @@ require('@babel/register');
 const express = require('express');
 const config = require('./config/config');
 // const cardRouter = require('./routes/Card');
-const homeRouter = require('./routes/Homerout');
+const homeRouter = require('./routes/home.route');
 const regologoRouter = require('./routes/regologo.route');
 
 const app = express();
