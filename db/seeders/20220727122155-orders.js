@@ -5,6 +5,7 @@ module.exports = {
         title: 'кебаб',
         img: 'блабла',
         location: 'крякря',
+        discription: 'dfdf',
         price: 22,
         saleprice: 15,
         admin_id: 1,
