@@ -6,7 +6,7 @@ const Layout = require('../Layout');
 module.exports = function card({ title, img, price }) {
   return (
     <Layout>
-      <section className="card mb-3">
+      <section className="card mb-3 container">
         <div className="row g-0">
           <div className="col-md-4" />
           <div className="col-md-8">
