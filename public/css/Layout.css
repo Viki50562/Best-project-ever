@@ -94,3 +94,19 @@ main{
 .alert {
   margin: 20px 0;
 }
+
+.big-card-info{
+  position: absolute;
+  bottom: 20%;
+  right: 1%;
+}
+
+.img-big-card{
+  margin: 15px;
+position:relative;
+max-height: 250px;
+max-width: 250px;
+
+right: 30%;
+
+}

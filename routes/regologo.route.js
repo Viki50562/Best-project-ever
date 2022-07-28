@@ -63,7 +63,7 @@ router.post('/log', async (req, res) => {
     raw: true,
   });
 
-  if (user && (await bcrypt.compare(password, user[0].password))) {
+  if (user && (user.length !== 0) && (await bcrypt.compare(password, user[0].password))) {
     req.session.user = user;
     res.json({ login: true });
   } else {

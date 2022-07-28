@@ -12,3 +12,5 @@ module.exports = function userCard({ card }) {
 
   );
 };
+
+// href="#" - захардкодила
