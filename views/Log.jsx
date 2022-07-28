@@ -9,7 +9,7 @@ module.exports = function Reg({ title }) {
           <header>
             <h2>Авторизация</h2>
           </header>
-          <form id="reg-form" action="/log" method="POST">
+          <form id="log-form" action="/log" method="POST">
             <div className="mb-3">
               <label className="form-label">Email</label>
               <input type="email" className="form-control" name="email" required />
@@ -18,7 +18,7 @@ module.exports = function Reg({ title }) {
               <label className="form-label">Пароль</label>
               <input type="password" className="form-control" name="password" required />
             </div>
-            <button type="submit" className="btn btn-primary">Вход</button>
+            <button type="submit" className="btn btn-primary log-btn">Вход</button>
           </form>
         </div>
       </body>

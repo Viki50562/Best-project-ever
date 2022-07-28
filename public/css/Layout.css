@@ -76,12 +76,12 @@ main{
   margin: 50px 0;
 }
 
-#reg-form {
+#reg-form, #log-form {
   min-width: 400px; 
   margin: 20px 0;
 }
 
-#reg-form .btn {
+#reg-form .btn, #log-form .btn{
   margin: 0;
   margin-top: 20px;
 }
@@ -89,4 +89,8 @@ main{
 .hello {
   margin: 0 20px 0 0;
   color: black;
+}
+
+.alert {
+  margin: 20px 0;
 }

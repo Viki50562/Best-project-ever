@@ -1,6 +1,7 @@
 // Александр С.
 
 const express = require('express');
+const bcrypt = require('bcrypt');
 
 const React = require('react');
 const ReactDomServer = require('react-dom/server');
@@ -20,16 +21,30 @@ router.get('/reg', (req, res) => {
 
 router.post('/reg', async (req, res) => {
   const { name, email, password, phone } = req.body;
-  const user = await users.create({
-    name,
-    email,
-    password,
-    phone,
+
+  const userInDb = await users.findAll({
+    where: {
+      email,
+    },
   });
 
-  res.redirect('/');
-  // req.session.user = 'test_user';
-  // res.status(201).json({ registration: true });
+  if (userInDb.length !== 0) {
+    res.json({ registration: false });
+  } else {
+    await users.create({
+      name,
+      email,
+      password: await bcrypt.hash(password, 10),
+      phone,
+    });
+
+    const user = await users.findAll({
+      where: { email },
+    });
+
+    req.session.user = user;
+    res.json({ registration: true });
+  }
 });
 
 // Authorization routes
@@ -44,18 +59,16 @@ router.post('/log', async (req, res) => {
   const { email, password } = req.body;
 
   const user = await users.findAll({
-    where: {
-      email,
-      password,
-    },
+    where: { email },
+    raw: true,
   });
-  if (user.length !== 0) {
+
+  if (user && (await bcrypt.compare(password, user[0].password))) {
     req.session.user = user;
-    // res.json({ login: true, route: '/' });
+    res.json({ login: true });
   } else {
-    // res.status(403).json({ login: false, message: 'This email is not used in the system' });
+    res.json({ login: false });
   }
-  res.redirect('/');
 });
 
 // Logout routes
