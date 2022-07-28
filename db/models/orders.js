@@ -16,10 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   orders.init({
     title: DataTypes.TEXT,
     img: DataTypes.TEXT,
+    discription: DataTypes.TEXT,
     location: DataTypes.TEXT,
     price: DataTypes.INTEGER,
     saleprice: DataTypes.INTEGER,
-    admin_id: DataTypes.INTEGER
+    admin_id: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'orders',

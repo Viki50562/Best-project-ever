@@ -13,6 +13,9 @@ module.exports = {
       img: {
         type: Sequelize.TEXT,
       },
+      discription: {
+        type: Sequelize.TEXT,
+      },
       location: {
         type: Sequelize.TEXT,
       },

@@ -1,9 +1,8 @@
 const router = require('express').Router();
-
 const Admin = require('../views/user_int/Admin');
-const { orders } = require('../db/models');
+// const { orders } = require('../db/models');
 
-router.route('./admin')
+router.route('/')
   .get((req, res) => {
     res.renderComponent(Admin);
   });
