@@ -7,6 +7,7 @@ const Card = require('../views/user_int/Card');
 
 
 // Если юзер авторизован
+
 router.get('/domoi', (req, res) => {
   const bigCard = React.createElement(Card, { title: 'kzkz', img: 'dhhs', price: 'dshksdn' });
   const html = ReactDomServer.renderToStaticMarkup(bigCard);
@@ -14,14 +15,11 @@ router.get('/domoi', (req, res) => {
   res.end(html);
 });
 
-
-
-
-
 // Если юзер нажал "не хочу" в карточке
 router.get('/return', (req, res) => {
   res.redirect('/')
 });
+
 
 // router.get('/cards/:id', async (req, res) => {
 //   const { id } = req.params;

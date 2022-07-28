@@ -6,9 +6,11 @@ module.exports = function userCard({ card }) {
         <img src={card.img} className="card-img-top" alt={`photo-${card.id}`} />
         <div className="card-body ">
           <h3>{ card.title }</h3>
-          <a href="#" className="btn btn-primary user-home">Хочу!</a>
+          <a href="/domoi" className="btn btn-primary user-home">Хочу!</a>  
         </div>
       </div>
    
   );
 };
+
+// href="#" - захардкодила
