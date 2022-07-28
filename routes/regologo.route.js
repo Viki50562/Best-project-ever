@@ -25,26 +25,26 @@ router.post('/reg', async (req, res) => {
     },
   });
 
-  if (userInDb) {
-    
-  }
-
-  await users.create({
-    name,
-    email,
-    password,
-    phone,
-  });
-
-  const user = await users.findAll({
-    where: {
+  if (userInDb.length !== 0) {
+    res.json({ registration: false });
+  } else {
+    await users.create({
+      name,
       email,
       password,
-    },
-  });
+      phone,
+    });
 
-  req.session.user = user;
-  res.redirect('/');
+    const user = await users.findAll({
+      where: {
+        email,
+        password,
+      },
+    });
+
+    req.session.user = user;
+    res.json({ registration: true });
+  }
 });
 
 // Authorization routes
