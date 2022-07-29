@@ -3,6 +3,7 @@ const React = require('react');
 const ReactDomServer = require('react-dom/server');
 const router = require('express').Router();
 const Card = require('../views/user_int/Card');
+const Reg = require('../views/Reg');
 const { orders } = require('../db/models');
 
 // Если юзер авторизован
@@ -18,7 +19,10 @@ router.route('/:id')
       const { user } = req.session;
       res.renderComponent(Card, { Cards: card, user: user[0].name });
     } else {
-      res.renderComponent(Card, { Cards: card, user: null });
+      const reg = React.createElement(Reg, { title: 'Registration', logRequired: true });
+      const html = ReactDomServer.renderToStaticMarkup(reg);
+      res.write('<!DOCTYPE html>');
+      res.end(html);
     }
   });
 
