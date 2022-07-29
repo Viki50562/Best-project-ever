@@ -33,3 +33,9 @@ router.get('/newcardadmin', async (req, res) => {
     res.renderComponent(Card, { Cards: card, user: null });
   }
 });
+
+router.get('/delete', async (req,res) => {
+  const { id } = req.query;
+  await orders.destroy({where: {id}});
+  res.redirect('cardadmin');
+});
