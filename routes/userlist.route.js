@@ -42,7 +42,7 @@ router.get('/delete', async (req,res) => {
 
 router.post('/newadmincard', async (req,res) => {
   const {id, title, img, discription, location, price, saleprice} = req.body;
-  
+  console.log(id)
   if (id) {
     await orders.update(
       { title,

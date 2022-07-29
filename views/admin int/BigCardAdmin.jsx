@@ -4,11 +4,12 @@ const Layout = require('../Layout');
 module.exports = function card({ Cards, user, admin }) {
   return (
     <Layout user={user} admin={admin}>
-       <form id={Cards.id} action="/newadmincard" method="POST">
+       <form action="/newadmincard" method="POST">
       <div className="margin-card">
         <div className="row g-0 bg-light position-relative btn-group  container">
           <div className="col-md-6 mb-md-0 p-md-4 img-wrap">
           <img src={Cards.img} className="w-100 img-food" style={{width: "400px"}}/>
+            <input className="hidden" name="id" value={Cards.id} />
 
             <div className="dropdown img-select">
               <select class="form-select edit-card" name="img" aria-label="Default select example">
@@ -74,7 +75,7 @@ module.exports = function card({ Cards, user, admin }) {
             </div>
 
 
-            <button className="btn btn-primary center btn-card">Добавить </button>
+            <button className="btn btn-primary center btn-card">Мякнуть </button>
           </div>
 
         </div>
