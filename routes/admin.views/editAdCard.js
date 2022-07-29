@@ -2,8 +2,8 @@
 const React = require('react');
 const ReactDomServer = require('react-dom/server');
 const router = require('express').Router();
-const Card = require('../views/admin int/BigCardAdmin');
-const { orders } = require('../db/models');
+const Card = require('../../views/admin int/BigCardAdmin');
+const { orders } = require('../../db/models');
 
 router.route('/bigcardadmin')
   .get(async (req, res) => {
