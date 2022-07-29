@@ -1,8 +1,8 @@
 // Главный роут (home page)
 const router = require('express').Router();
 
-const UserList = require('../views/admin int/AdminCardList');
-const { orders } = require('../db/models');
+const UserList = require('../../views/admin int/AdminCardList');
+const { orders } = require('../../db/models');
 
 router.route('/cardadmin')
   .get(async (req, res) => {
