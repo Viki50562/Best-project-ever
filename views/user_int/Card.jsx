@@ -52,7 +52,7 @@ module.exports = function card({ Cards, user }) {
                     <div className="modal-body">
                       Решайся!
                       {' '}
-                      {Cards.discription}
+                      {Cards.title}
                       {' '}
                       ждёт тебя!
                     </div>
