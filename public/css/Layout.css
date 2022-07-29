@@ -122,3 +122,8 @@ right: 30%;
   background-color: rgb(201, 33, 4);
   border-radius: 10%;
 }
+
+.w-100{
+max-width: 400px; 
+max-height: 253px;
+}

@@ -27,7 +27,7 @@ router.route('/:id')
   });
 
 // Если юзер нажал "не хочу" в карточке
-router.get('/', (req, res) => {
+router.get('/return', (req, res) => {
   res.redirect('/');
 });
 
