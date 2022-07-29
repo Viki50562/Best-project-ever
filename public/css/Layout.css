@@ -31,7 +31,7 @@
 }
 
 main{
-    margin: 20px 150px
+    margin: 20px 0px
 }
 .user-home{
     display: flex;
@@ -40,8 +40,8 @@ main{
     justify-content: center;
 }
 .card{
-    margin:  10px 30px;
-    width: 30%;
+  
+    margin:  10px 10px;
 }
 .center{
     position: relative;
@@ -76,12 +76,12 @@ main{
   margin: 50px 0;
 }
 
-#reg-form {
+#reg-form, #log-form {
   min-width: 400px; 
   margin: 20px 0;
 }
 
-#reg-form .btn {
+#reg-form .btn, #log-form .btn{
   margin: 0;
   margin-top: 20px;
 }
@@ -89,4 +89,36 @@ main{
 .hello {
   margin: 0 20px 0 0;
   color: black;
+}
+
+.alert {
+  margin: 20px 0;
+}
+
+.big-card-info{
+  position: absolute;
+  bottom: 20%;
+  right: 1%;
+}
+
+.img-big-card{
+  margin: 15px;
+position:relative;
+max-height: 250px;
+max-width: 250px;
+
+right: 30%;
+
+}
+
+.newPrice{
+  
+
+  font-size: 40px;
+  color: aliceblue;
+  
+  height: 45px;
+  width: 55px;
+  background-color: rgb(201, 33, 4);
+  border-radius: 10%;
 }
