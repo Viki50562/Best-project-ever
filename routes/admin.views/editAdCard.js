@@ -11,7 +11,7 @@ router.route('/bigcardadmin')
     console.log(card);
     if (req.session.user) {
       const { user } = req.session;
-      res.renderComponent(Card, { Cards: card, user: user[0].name });
+      res.renderComponent(Card, { Cards: card, user: user[0].name, admin: user[0].admin });
        
     } else {
       res.renderComponent(Card, { Cards: card, user: null });

@@ -9,7 +9,7 @@ router.route('/cardadmin')
     const orderList = await orders.findAll({ raw: true });
     if (req.session.user) {
       const { user } = req.session;
-      res.renderComponent(UserList, { arrCards: orderList, user: user[0].name });
+      res.renderComponent(UserList, { arrCards: orderList, user: user[0].name, admin: user[0].admin  });
     } else {
       res.renderComponent(UserList, { arrCards: orderList, user: null });
     }

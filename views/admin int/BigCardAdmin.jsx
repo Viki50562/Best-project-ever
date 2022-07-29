@@ -1,40 +1,43 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function card({ Cards }) {
+module.exports = function card({ Cards, user, admin }) {
   return (
-    <Layout>
+    <Layout user={user} admin={admin}>
       <div className="margin-card">
         <div className="row g-0 bg-light position-relative btn-group  container">
-          <div className="col-md-6 mb-md-0 p-md-4">
-            <img src={Cards.img} className="w-100" alt={`photo-${Cards.id}`} />
+          <div className="col-md-6 mb-md-0 p-md-4 img-wrap">
 
-            <div className="dropdown">
-              <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Выбрать картинку
-              </button>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="../../public/src/burger.jpeg">Бургер</a></li>
-                <li><a className="dropdown-item" href="../../public/src/kebab.jpeg">Кебаб</a></li>
-                <li><a className="dropdown-item" href="../../public/src/pizza.jpeg">Пицца</a></li>
-                <li><a className="dropdown-item" href="../../public/src/shava.jpeg">Шаверма</a></li>
-                <li><a className="dropdown-item" href="../../public/src/supec.jpeg">Суп</a></li>
-              </ul>
+            <div className="dropdown img-select">
+              <select class="form-select edit-card" aria-label="Default select example">
+                    <option disabled selected>Выбери картинку</option>
+                    <option value="/src/burger.jpeg">Бургер</option>
+                    <option value="/src/kebab.jpeg">Кебаб</option>
+                    <option value="/src/pizza.jpeg">Пицца</option>
+                    <option value="/src/shava.jpeg">Шаверма</option>
+                    <option value="/src/supec.jpeg">Суп</option>
+                    <option value="/src/pasta.jpeg">Паста Пупсянара</option>
+                    <option value="/src/cezar.jpeg">Салат Цезарь</option>
+                    <option value="/src/rolls.jpeg">Роллы</option>
+                    <option value="/src/shava.jpeg">Шварма</option>
+                  </select>
             </div>
           </div>
           <div className="col-md-6 p-4 ps-md-0 btn-center">
 
-            <div className="btn-group">
-              <button type="button" className="btn-location   btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
-                Выберете район
+                  <select class="form-select edit-card" aria-label="Default select example">
+                    <option disabled selected>Ты в каком райное?</option>
+                    <option value="Адмиралтейский">Адмиралтейский</option>
+                    <option value="Василеостровский">Василеостровский</option>
+                    <option value="Выборгский">Выборгский</option>
+                    <option value="Калининский">Калининский</option>
+                    <option value="Петроградский">Петроградский</option>
+                    <option value="Московский">Московский</option>
+                    <option value="Центральный">Центральный</option>
+                    <option value="Невский">Невский</option>
+                    <option value="Приморский">Приморский</option>
+                  </select>
 
-              </button>
-              <ul className="dropdown-menu dropdown-menu-end">
-                <li><button className="dropdown-item" type="button">Action</button></li>
-                <li><button className="dropdown-item" type="button">Another action</button></li>
-                <li><button className="dropdown-item" type="button">Something else here</button></li>
-              </ul>
-            </div>
 
             <h5 className="mt-0">Название блюда</h5>
             <div className="input-group input-group-lg">

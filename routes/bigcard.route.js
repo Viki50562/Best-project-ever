@@ -17,7 +17,7 @@ router.route('/:id')
     });
     if (req.session.user) {
       const { user } = req.session;
-      res.renderComponent(Card, { Cards: card, user: user[0].name });
+      res.renderComponent(Card, { Cards: card, user: user[0].name, admin: user[0].admin });
     } else {
       const reg = React.createElement(Reg, { title: 'Registration', logRequired: true });
       const html = ReactDomServer.renderToStaticMarkup(reg);

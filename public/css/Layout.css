@@ -157,26 +157,31 @@ max-height: 253px;
 
 .container{
   margin: 30px 0px;
-  border: 2px solid black ;
-  border-radius: 1%;
 
 }
 
 .btn-center{
 position: relative;
-align-items: center;
-text-align: center;
+/* text-align: center; */
 }
 
 .btn-group{
   display: block;
-  text-align: center;
+  /* text-align: center; */
 }
 .dropdown{
   margin: 10px 0px 0px 0px;
 }
 
 .margin-card{
+margin: 50px 10%;
+}
 
-margin: 0px 10%;
+.hello a {
+  color: black;
+  text-decoration: none;
+}
+
+.edit-card {
+  margin-bottom: 20px;
 }
