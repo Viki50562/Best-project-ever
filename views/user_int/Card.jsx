@@ -44,7 +44,7 @@ module.exports = function card({ Cards }) {
             <h1 className="newPrice">{Cards.saleprice}</h1>
             руб
           </div>
-          <p className="card-text"><small className="text-muted">15 мин назад, ещё тёплое</small></p>
+          <p className="card-text"><small className="text-muted">15 мин назад, ещё тёпленькое</small></p>
           <a href="/buy" className="btn btn-primary center">Выкупить </a>
           <a href="/" className="btn btn-primary center">Не хочу </a>
         </div>

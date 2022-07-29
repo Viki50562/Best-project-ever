@@ -7,7 +7,7 @@ module.exports = function Reg({ title }) {
       <body>
         <div className="container regologo-wrap">
           <header>
-            <h2>Регистрация</h2>
+            <h2>Регистрэйшн</h2>
           </header>
           <form id="reg-form" action="/reg" method="POST">
             <div className="mb-3">
@@ -19,7 +19,7 @@ module.exports = function Reg({ title }) {
               <input type="email" className="form-control" name="email"  />
             </div>
             <div className="mb-3">
-              <label className="form-label">Номер телефона</label>
+              <label className="form-label">Номерок</label>
               <input type="phone" className="form-control" name="phone"  />
             </div>
             <div className="mb-3">
@@ -27,10 +27,10 @@ module.exports = function Reg({ title }) {
               <input type="password" id="password" className="form-control" minLength={4} name="password"  />
             </div>
             <div className="mb-3">
-              <label className="form-label">Подтверждение пароля</label>
+              <label className="form-label">Подтверди пароль щас же</label>
               <input type="password" id="password-check" className="form-control" minLength={4} name="password-check"  />
             </div>
-            <button type="submit" className="btn btn-primary reg-btn">Готово</button>
+            <button type="submit" className="btn btn-primary reg-btn">Запулить</button>
           </form>
         </div>
       </body>

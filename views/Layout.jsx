@@ -17,16 +17,16 @@ module.exports = function Layout({ title, user, children }) {
       </head>
       <body>
         <header className="header">
-          <a href="/" id="logo-link"><h1 className="logo">Dosta-v-O4ko!</h1></a>
+          <a href="/" id="logo-link"><h1 className="logo">ДеливериМуняк</h1></a>
           {user ? (
             <div className="auth">
               <p className="hello">{user} тута</p>
-              <a href="/logout"><button type="button" className="btn btn-dark">Выйти</button></a>
+              <a href="/logout"><button type="button" className="btn btn-dark">Выскочить</button></a>
             </div>
           ) : (
             <div className="auth">
-              <a href="/reg"><button type="button" className="btn btn-dark ">Rega</button></a>
-              <a href="/log"><button type="button" className="btn btn-dark">Loga</button></a>
+              <a href="/reg"><button type="button" className="btn btn-dark ">Регулька</button></a>
+              <a href="/log"><button type="button" className="btn btn-dark">Логулька</button></a>
             </div>
           )}
         </header>
