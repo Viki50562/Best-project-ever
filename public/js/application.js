@@ -4,6 +4,8 @@ const pass = document.querySelector('#password');
 const passCheck = document.querySelector('#password-check');
 const regBtn = document.querySelector('.reg-btn');
 const logBtn = document.querySelector('.log-btn');
+const container = document.querySelector('.card');
+const buyBtn = document.querySelector('.btn-buy');
 const imgSelect = document.querySelector('.img-select');
 const imgWrap = document.querySelector('.img-wrap');
 
@@ -78,6 +80,18 @@ if (logForm) {
   });
 }
 
+// покупка при нажатии на "Выкупить"
+buyBtn.addEventListener('click', async (event) => {
+  event.preventDefault();
+  const { id } = event.target;
+  console.log(id);
+
+  const response = await fetch(`/${id}`, { method: 'delete' })
+  const data = await response.json()
+  if (data.delete) {
+    window.location.href = '/';
+  }
+})
 imgSelect.addEventListener('click', (event) => {
   const img = document.getElementsByTagName('img')[0];
   if (img) img.remove();
