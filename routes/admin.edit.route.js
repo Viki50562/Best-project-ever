@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const AdminEdit = require('../views/user_int/AdminEdit');
+const AdminEdit = require('../views/user_int/Card');
 const { orders } = require('../db/models');
 
 router.route('/admin/edit')

@@ -1,7 +1,7 @@
 require('@babel/register');
 const express = require('express');
 const config = require('./config/config');
-// const cardRouter = require('./routes/Card');
+// const cardRouter = require('./routes/bigcard.route');
 const userList = require('./routes/userlist.route'); // поменяла!!!!!
 const regologoRouter = require('./routes/regologo.route');
 const bigCardRouter = require('./routes/bigcard.route');
