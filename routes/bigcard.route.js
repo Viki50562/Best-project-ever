@@ -6,10 +6,14 @@ const Card = require('../views/user_int/Card');
 const { orders } = require('../db/models');
 
 // Если юзер авторизован
-router.route('/usercard')
+
+router.route('/:id')
   .get(async (req, res) => {
-    const card = await orders.findOne({ raw: true });
-    console.log(card);
+    const { id } = req.params;
+    const card = await orders.findOne({
+      where: { id },
+      raw: true,
+    });
     if (req.session.user) {
       const { user } = req.session;
       res.renderComponent(Card, { Cards: card, user: user[0].name });

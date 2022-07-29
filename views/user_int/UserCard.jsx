@@ -26,7 +26,7 @@ module.exports = function userCard({ card }) {
           </h5>
         </div>
         <p className="card-text"><small className="text-muted">{card.location}</small></p>
-        <a href="/usercard" id={card.id} className="btn btn-primary user-home">Хочу!</a>
+        <a href={`/${card.id}`} id={card.id} className="btn btn-primary user-home">Хочу!</a>
       </div>
     </div>
   );

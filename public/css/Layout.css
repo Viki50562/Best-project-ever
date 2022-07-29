@@ -112,6 +112,8 @@ right: 30%;
 }
 
 .newPrice{
+  display:  inline;
+  text-align: center;
   font-size: 40px;
   color: aliceblue;
   height: 45px;
@@ -141,5 +143,40 @@ display: flex;
 .location-text{
   position: relative;
   top: 5px;
-  
+}
+.w-100{
+max-width: 400px; 
+max-height: 253px;
+}
+
+.border-card{
+  margin: 20px 0px;
+}
+
+ 
+
+.container{
+  margin: 30px 0px;
+  border: 2px solid black ;
+  border-radius: 1%;
+
+}
+
+.btn-center{
+position: relative;
+align-items: center;
+text-align: center;
+}
+
+.btn-group{
+  display: block;
+  text-align: center;
+}
+.dropdown{
+  margin: 10px 0px 0px 0px;
+}
+
+.margin-card{
+
+margin: 0px 10%;
 }
