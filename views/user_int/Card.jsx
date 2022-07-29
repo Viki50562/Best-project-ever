@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function card({ Cards }) {
+module.exports = function card({ Cards, user }) {
   return (
-    <Layout>
+    <Layout user={user}>
       <div className="row g-0 bg-light position-relative">
 
         <div className="modal" tabIndex="-1">
