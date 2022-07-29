@@ -39,3 +39,18 @@ router.get('/delete', async (req,res) => {
   await orders.destroy({where: {id}});
   res.redirect('cardadmin');
 });
+
+router.post('/newadmincard', async (req,res) => {
+  const {title, img, discription, location, price, saleprice} = req.body;
+  
+  await orders.create({
+    title,
+    img,
+    discription,
+    location,
+    price,
+    saleprice,
+  });
+
+  res.redirect('cardadmin');
+});
