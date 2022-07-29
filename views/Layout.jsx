@@ -17,10 +17,27 @@ module.exports = function Layout({ title, user, children }) {
       </head>
       <body>
         <header className="header">
-          <a href="/" id="logo-link"><h1 className="logo">ДеливериМуняк</h1></a>
+          <div><a href="/" id="logo-link"><h1 className="logo">ДеливериМуняк</h1></a></div>
+
+          <div className="location">
+            <h5 className="location-text">Я нахожусь :</h5>
+            <div className="btn-group">
+              <button type="button" className="btn-location   btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+               Выберете район</button>
+              <ul className="dropdown-menu dropdown-menu-end">
+                <li><button className="dropdown-item" type="button">Action</button></li>
+                <li><button className="dropdown-item" type="button">Another action</button></li>
+                <li><button className="dropdown-item" type="button">Something else here</button></li>
+              </ul>
+            </div>
+          </div>
           {user ? (
             <div className="auth">
-              <p className="hello">{user} тута</p>
+              <p className="hello">
+                {user}
+                {' '}
+                тута
+              </p>
               <a href="/logout"><button type="button" className="btn btn-dark">Выскочить</button></a>
             </div>
           ) : (
