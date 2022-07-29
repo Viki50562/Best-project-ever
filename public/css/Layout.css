@@ -1,0 +1,210 @@
+*{
+     margin: 0px 0px;
+    padding: 0px;
+    top:0px ;
+}
+
+.header{
+    position: relative ;
+    display: flex;
+    height: 80px;
+    bottom: 100%;
+    background-color: rgb(105, 177, 199) ;
+}
+
+.auth{
+    position: absolute;
+    right:20px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+} 
+
+.btn{
+    margin: 0px 12px;
+}
+
+.logo{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+main{
+    margin: 20px 0px
+}
+.user-home{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+  
+    margin:  10px 10px;
+}
+.center{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+.card-img-top{
+    max-width: 300px ;
+    max-height: 190px;
+}
+
+.ct{
+
+
+}
+
+#logo-link {
+  text-decoration: none;
+  color:black;
+}
+
+#logo-link:hover {
+  color:black;
+}
+
+.regologo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+}
+
+#reg-form, #log-form {
+  min-width: 400px; 
+  margin: 20px 0;
+}
+
+#reg-form .btn, #log-form .btn{
+  margin: 0;
+  margin-top: 20px;
+}
+
+.hello {
+  margin: 0 20px 0 0;
+  color: black;
+}
+
+.alert {
+  margin: 20px 0;
+}
+
+.big-card-info{
+  position: absolute;
+  bottom: 20%;
+  right: 1%;
+}
+
+.img-big-card{
+  margin: 15px;
+position:relative;
+max-height: 250px;
+max-width: 250px;
+
+right: 30%;
+
+}
+
+.newPrice{
+  display:  inline;
+  text-align: center;
+  font-size: 40px;
+  color: aliceblue;
+  height: 45px;
+  width: 55px;
+  background-color: rgb(201, 33, 4);
+  border-radius: 10%;
+}
+
+.admin-btn{
+  display: flex;
+position: relative;
+}
+
+.flex-card{
+display: flex;
+
+}
+
+.location{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top:20px;
+  right: 35%;
+}
+
+.location-text{
+  position: relative;
+  top: 5px;
+}
+.w-100{
+max-width: 400px; 
+max-height: 253px;
+}
+
+.border-card{
+  margin: 20px 0px;
+}
+
+ 
+
+.container{
+  margin: 30px 0px;
+
+}
+
+.btn-center{
+position: relative;
+/* text-align: center; */
+}
+
+.btn-group{
+  display: block;
+  /* text-align: center; */
+}
+.dropdown{
+  margin: 10px 0px 0px 0px;
+}
+
+.margin-card{
+margin: 50px 10%;
+}
+
+.hello a {
+  color: black;
+  text-decoration: none;
+}
+
+.edit-card {
+  margin-bottom: 20px;
+}
+
+.new-card-link {
+  display: block;
+  text-align: center;
+}
+
+.new-card-link .btn {
+  background-color: green;
+  border: none;
+}
+
+.new-card-link .btn:hover {
+  background-color:aquamarine;
+  color: black
+}
+
+.btn-card {
+  margin: 30px 0 0 0;
+}
+
+.hidden {
+  display:none;
+}
