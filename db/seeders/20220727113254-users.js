@@ -6,6 +6,7 @@ module.exports = {
         email: 'syrcova.viktorija@gmail.com',
         password: '123',
         phone: '89215701351',
+        admin: true,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
