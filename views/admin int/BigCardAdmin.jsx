@@ -49,14 +49,27 @@ module.exports = function card({ Cards }) {
             Цена со скидкой
 
           </div>
+
+          <div className="btn-group">
+              <button type="button" className="btn-location   btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+               Выберете район</button>
+              <ul className="dropdown-menu dropdown-menu-end">
+                <li><button className="dropdown-item" type="button">Action</button></li>
+                <li><button className="dropdown-item" type="button">Another action</button></li>
+                <li><button className="dropdown-item" type="button">Something else here</button></li>
+              </ul>
+            </div>
+          </div>
+
           <div className="input-group input-group-lg">
             <input type="text" value={Cards.saleprice} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
           </div>
+          
           <p className="card-text"><small className="text-muted">15 мин назад, ещё тёплое</small></p>
           <a href="/" className="btn btn-primary center">Добавить </a>
           <a href="/return" className="btn btn-primary center">Удалить</a>
         </div>
-      </div>
+     
     </Layout>
   );
 };

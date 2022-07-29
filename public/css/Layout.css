@@ -112,13 +112,34 @@ right: 30%;
 }
 
 .newPrice{
-  
-
   font-size: 40px;
   color: aliceblue;
-  
   height: 45px;
   width: 55px;
   background-color: rgb(201, 33, 4);
   border-radius: 10%;
+}
+
+.admin-btn{
+  display: flex;
+position: relative;
+}
+
+.flex-card{
+display: flex;
+
+}
+
+.location{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top:20px;
+  right: 35%;
+}
+
+.location-text{
+  position: relative;
+  top: 5px;
+  
 }
