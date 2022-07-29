@@ -1,7 +1,8 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Reg({ title }) {
+module.exports = function Reg({ title, logRequired }) {
+
   return (
     <Layout title={title}>
       <body>
@@ -10,6 +11,7 @@ module.exports = function Reg({ title }) {
             <h2>Регистрэйшн</h2>
           </header>
           <form id="reg-form" action="/reg" method="POST">
+            {(logRequired) && <div className="alert alert-danger pasw-err">Дурилка, давай зарегаемся сначала</div>}
             <div className="mb-3">
               <label className="form-label">Имя</label>
               <input type="text" className="form-control" name="name"  />
