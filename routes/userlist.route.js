@@ -1,7 +1,9 @@
 const router = require('express').Router();
 
 const UserList = require('../views/user_int/UserList');
+const Card = require('../views/admin int/BigCardAdmin');
 const { orders } = require('../db/models');
+
 
 router.route('/')
   .get(async (req, res) => {
@@ -15,3 +17,19 @@ router.route('/')
   });
 
 module.exports = router;
+
+router.get('/newcardadmin', async (req, res) => {
+  const card = {
+    title: '',
+    discription: '',
+    price: '',
+    saleprice: '',
+  };
+  if (req.session.user) {
+    const { user } = req.session;
+    res.renderComponent(Card, { Cards: card, user: user[0].name, admin: user[0].admin });
+     
+  } else {
+    res.renderComponent(Card, { Cards: card, user: null });
+  }
+});

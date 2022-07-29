@@ -26,7 +26,7 @@ module.exports = function card({ Cards, user, admin }) {
           <div className="col-md-6 p-4 ps-md-0 btn-center">
 
                   <select class="form-select edit-card" aria-label="Default select example">
-                    <option disabled selected>Ты в каком райное?</option>
+                    <option disabled selected>Еда у тебя в каком райное?</option>
                     <option value="Адмиралтейский">Адмиралтейский</option>
                     <option value="Василеостровский">Василеостровский</option>
                     <option value="Выборгский">Выборгский</option>
@@ -71,10 +71,8 @@ module.exports = function card({ Cards, user, admin }) {
               <input type="text" value={Cards.saleprice} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
             </div>
 
-            <p className="card-text"><small className="text-muted">15 мин назад, ещё тёплое</small></p>
 
-            <a href="/" className="btn btn-primary center">Добавить </a>
-            <a href="/return" className="btn btn-primary center">Удалить</a>
+            <a href="/add-card" className="btn btn-primary center btn-card">Добавить </a>
           </div>
 
         </div>
