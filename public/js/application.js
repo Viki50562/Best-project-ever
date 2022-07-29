@@ -6,6 +6,8 @@ const regBtn = document.querySelector('.reg-btn');
 const logBtn = document.querySelector('.log-btn');
 const container = document.querySelector('.card');
 const buyBtn = document.querySelector('.btn-buy');
+const imgSelect = document.querySelector('.img-select');
+const imgWrap = document.querySelector('.img-wrap');
 
 // слушатель рег-формы, если она есть (т.е. пользователь на рег-странице)
 if (regForm) {
@@ -90,3 +92,10 @@ buyBtn.addEventListener('click', async (event) => {
     window.location.href = '/';
   }
 })
+imgSelect.addEventListener('click', (event) => {
+  const img = document.getElementsByTagName('img')[0];
+  if (img) img.remove();
+  
+  const html = `<img src='${event.target.value}' className="w-100 img-food" style="width:400px"/>`;
+  imgWrap.insertAdjacentHTML('afterbegin', html);
+});

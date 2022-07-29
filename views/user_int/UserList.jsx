@@ -2,9 +2,9 @@ const React = require('react');
 const Layout = require('../Layout');
 const UserCard = require('./UserCard');
 
-module.exports = function userList({ arrCards, user }) {
+module.exports = function userList({ arrCards, user, admin }) {
   return (
-    <Layout user={user}>
+    <Layout user={user} admin={admin}>
       <main className="main">
         <section className="container">
           <div className="user-home">

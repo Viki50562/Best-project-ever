@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function card({ Cards, user }) {
+module.exports = function card({ Cards, user, admin }) {
   return (
-    <Layout user={user}>
+    <Layout user={user} admin={admin}>
       <div className="border-card">
         <div className="container border-card">
           <div className="row g-0 bg-light position-relative">

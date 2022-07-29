@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Layout({ title, user, children }) {
+module.exports = function Layout({ title, user, admin, children }) {
   return (
     <html lang="en">
       <head>
@@ -18,28 +18,34 @@ module.exports = function Layout({ title, user, children }) {
       <body>
         <header className="header">
           <div><a href="/" id="logo-link"><h1 className="logo">ДеливериМуняк</h1></a></div>
-
-          <div className="location">
-            <h5 className="location-text">Я нахожусь :</h5>
-            <div className="btn-group">
-              <button type="button" className="btn-location   btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
-               Выберете район</button>
-              <ul className="dropdown-menu dropdown-menu-end">
-                <li><button className="dropdown-item" type="button">Action</button></li>
-                <li><button className="dropdown-item" type="button">Another action</button></li>
-                <li><button className="dropdown-item" type="button">Something else here</button></li>
-              </ul>
-            </div>
-          </div>
           {user ? (
+            <>
+            <div className="location">
+              <div className="btn-group">
+                  <select class="form-select" aria-label="Default select example">
+                    <option disabled selected>Ты в каком райное?</option>
+                    <option value="Адмиралтейский">Адмиралтейский</option>
+                    <option value="Василеостровский">Василеостровский</option>
+                    <option value="Выборгский">Выборгский</option>
+                    <option value="Калининский">Калининский</option>
+                    <option value="Петроградский">Петроградский</option>
+                    <option value="Московский">Московский</option>
+                    <option value="Центральный">Центральный</option>
+                    <option value="Невский">Невский</option>
+                    <option value="Приморский">Приморский</option>
+                  </select>
+              </div>
+            </div>
             <div className="auth">
               <p className="hello">
                 {user}
+                {admin && <a href="/cardadmin"><p className="hello">/ АДМИНША! /</p></a>}
                 {' '}
                 тута
               </p>
               <a href="/logout"><button type="button" className="btn btn-dark">Выскочить</button></a>
             </div>
+            </>
           ) : (
             <div className="auth">
               <a href="/reg"><button type="button" className="btn btn-dark ">Регулька</button></a>
