@@ -4,6 +4,8 @@ const pass = document.querySelector('#password');
 const passCheck = document.querySelector('#password-check');
 const regBtn = document.querySelector('.reg-btn');
 const logBtn = document.querySelector('.log-btn');
+const container = document.querySelector('.card');
+const buyBtn = document.querySelector('.btn-buy');
 
 // слушатель рег-формы, если она есть (т.е. пользователь на рег-странице)
 if (regForm) {
@@ -75,3 +77,16 @@ if (logForm) {
     }
   });
 }
+
+// покупка при нажатии на "Выкупить"
+buyBtn.addEventListener('click', async (event) => {
+  event.preventDefault();
+  const { id } = event.target;
+  console.log(id);
+
+  const response = await fetch(`/${id}`, { method: 'delete' })
+  const data = await response.json()
+  if (data.delete) {
+    window.location.href = '/';
+  }
+})
