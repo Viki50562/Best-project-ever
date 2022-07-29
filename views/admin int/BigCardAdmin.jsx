@@ -1,50 +1,56 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function card({ Cards }) {
+module.exports = function card({ Cards, user, admin }) {
   return (
-    <Layout>
+    <Layout user={user} admin={admin}>
+       <form action="/newadmincard" method="POST">
       <div className="margin-card">
         <div className="row g-0 bg-light position-relative btn-group  container">
-          <div className="col-md-6 mb-md-0 p-md-4">
-            <img src={Cards.img} className="w-100" alt={`photo-${Cards.id}`} />
+          <div className="col-md-6 mb-md-0 p-md-4 img-wrap">
+          <img src={Cards.img} className="w-100 img-food" style={{width: "400px"}}/>
+            <input className="hidden" name="id" value={Cards.id} />
 
-            <div className="dropdown">
-              <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Выбрать картинку
-              </button>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="../../public/src/burger.jpeg">Бургер</a></li>
-                <li><a className="dropdown-item" href="../../public/src/kebab.jpeg">Кебаб</a></li>
-                <li><a className="dropdown-item" href="../../public/src/pizza.jpeg">Пицца</a></li>
-                <li><a className="dropdown-item" href="../../public/src/shava.jpeg">Шаверма</a></li>
-                <li><a className="dropdown-item" href="../../public/src/supec.jpeg">Суп</a></li>
-              </ul>
+            <div className="dropdown img-select">
+              <select class="form-select edit-card" name="img" aria-label="Default select example">
+                    <option disabled selected>Выбери картинку</option>
+                    <option value="/src/burger.jpeg">Бургер</option>
+                    <option value="/src/kebab.jpeg">Кебаб</option>
+                    <option value="/src/pizza.jpeg">Пицца</option>
+                    <option value="/src/shava.jpeg">Шаверма</option>
+                    <option value="/src/supec.jpeg">Суп</option>
+                    <option value="/src/pasta.jpeg">Паста Пупсянара</option>
+                    <option value="/src/cezar.jpeg">Салат Цезарь</option>
+                    <option value="/src/rolls.jpeg">Роллы</option>
+                    <option value="/src/shava.jpeg">Шварма</option>
+                  </select>
             </div>
           </div>
           <div className="col-md-6 p-4 ps-md-0 btn-center">
 
-            <div className="btn-group">
-              <button type="button" className="btn-location   btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
-                Выберете район
+                  <select class="form-select edit-card" name="location" aria-label="Default select example">
+                    <option disabled selected>Еда у тебя в каком райное?</option>
+                    <option value="Адмиралтейский">Адмиралтейский</option>
+                    <option value="Василеостровский">Василеостровский</option>
+                    <option value="Выборгский">Выборгский</option>
+                    <option value="Калининский">Калининский</option>
+                    <option value="Петроградский">Петроградский</option>
+                    <option value="Московский">Московский</option>
+                    <option value="Центральный">Центральный</option>
+                    <option value="Невский">Невский</option>
+                    <option value="Приморский">Приморский</option>
+                  </select>
 
-              </button>
-              <ul className="dropdown-menu dropdown-menu-end">
-                <li><button className="dropdown-item" type="button">Action</button></li>
-                <li><button className="dropdown-item" type="button">Another action</button></li>
-                <li><button className="dropdown-item" type="button">Something else here</button></li>
-              </ul>
-            </div>
 
             <h5 className="mt-0">Название блюда</h5>
             <div className="input-group input-group-lg">
-              <input type="text" value={Cards.title} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
+              <input type="text" value={Cards.title} className="form-control" name="title" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
             </div>
 
             <p>Описание</p>
 
             <div className="form-floating">
-              <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: '100px' }} />
+              <textarea className="form-control" name="discription" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: '100px' }} />
               <label htmlFor="floatingTextarea2">{Cards.discription}</label>
             </div>
 
@@ -53,7 +59,7 @@ module.exports = function card({ Cards }) {
               <h5>
                 <s />
                 <div className="input-group input-group-lg">
-                  <input type="text" value={Cards.price} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" value={Cards.price} className="form-control" name="price" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </h5>
 
@@ -65,17 +71,16 @@ module.exports = function card({ Cards }) {
             </div>
 
             <div className="input-group input-group-lg">
-              <input type="text" value={Cards.saleprice} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
+              <input type="text" value={Cards.saleprice} className="form-control" name="saleprice" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
             </div>
 
-            <p className="card-text"><small className="text-muted">15 мин назад, ещё тёплое</small></p>
 
-            <a href="/" className="btn btn-primary center">Добавить </a>
-            <a href="/return" className="btn btn-primary center">Удалить</a>
+            <button className="btn btn-primary center btn-card">Мякнуть </button>
           </div>
 
         </div>
       </div>
+      </form>
     </Layout>
   );
 };

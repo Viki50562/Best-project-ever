@@ -21,7 +21,7 @@ app.use('/', userList); // поменяла!!!!
 // app.use('/card', cardRouter);
 app.use('/', regologoRouter);
 app.use('/', bigCardRouter);
-app.use('/admin', adminRouter);
+app.use('/', adminRouter);
 
 app.listen(PORT, () => {
   console.log(`Server started at ${PORT} port`);

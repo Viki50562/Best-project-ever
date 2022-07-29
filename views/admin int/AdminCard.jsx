@@ -7,8 +7,8 @@ module.exports = function adminCard({ card }) {
       <div className="card-body ">
         <h3>{ card.title }</h3>
         <div className="admin-btn">
-          <a href="/bigcardadmin" className="btn btn-primary user-home">Редактировать</a>
-          <a href="#" className="btn btn-primary user-home">Удалить</a>
+          <a href={`/bigcardadmin?id=${card.id}`} className="btn btn-primary user-home">Редактировать</a>
+          <a href={`/delete?id=${card.id}`} className="btn btn-primary user-home">Удалить</a>
         </div>
       </div>
     </div>

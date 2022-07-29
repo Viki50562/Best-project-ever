@@ -4,6 +4,8 @@ const pass = document.querySelector('#password');
 const passCheck = document.querySelector('#password-check');
 const regBtn = document.querySelector('.reg-btn');
 const logBtn = document.querySelector('.log-btn');
+const imgSelect = document.querySelector('.img-select');
+const imgWrap = document.querySelector('.img-wrap');
 
 // слушатель рег-формы, если она есть (т.е. пользователь на рег-странице)
 if (regForm) {
@@ -75,3 +77,11 @@ if (logForm) {
     }
   });
 }
+
+imgSelect.addEventListener('click', (event) => {
+  const img = document.getElementsByTagName('img')[0];
+  if (img) img.remove();
+  
+  const html = `<img src='${event.target.value}' className="w-100 img-food" style="width:400px"/>`;
+  imgWrap.insertAdjacentHTML('afterbegin', html);
+});
