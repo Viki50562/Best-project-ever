@@ -46,7 +46,7 @@ module.exports = function card({ Cards }) {
           </div>
           <p className="card-text"><small className="text-muted">15 мин назад, ещё тёплое</small></p>
           <a href="/buy" className="btn btn-primary center">Выкупить </a>
-          <a href="/return" className="btn btn-primary center">Не хочу </a>
+          <a href="/" className="btn btn-primary center">Не хочу </a>
         </div>
       </div>
     </Layout>

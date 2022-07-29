@@ -1,10 +1,9 @@
-// Главный роут (home page)
 const router = require('express').Router();
 
 const UserList = require('../views/user_int/UserList');
 const { orders } = require('../db/models');
 
-router.route('/userhome')
+router.route('/')
   .get(async (req, res) => {
     const orderList = await orders.findAll({ raw: true });
     if (req.session.user) {
