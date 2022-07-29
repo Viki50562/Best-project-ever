@@ -4,7 +4,7 @@ const Layout = require('../Layout');
 module.exports = function card({ Cards, user, admin }) {
   return (
     <Layout user={user} admin={admin}>
-       <form id="add-card" action="/newadmincard" method="POST">
+       <form id={Cards.id} action="/newadmincard" method="POST">
       <div className="margin-card">
         <div className="row g-0 bg-light position-relative btn-group  container">
           <div className="col-md-6 mb-md-0 p-md-4 img-wrap">

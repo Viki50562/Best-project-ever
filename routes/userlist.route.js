@@ -41,16 +41,28 @@ router.get('/delete', async (req,res) => {
 });
 
 router.post('/newadmincard', async (req,res) => {
-  const {title, img, discription, location, price, saleprice} = req.body;
+  const {id, title, img, discription, location, price, saleprice} = req.body;
   
-  await orders.create({
-    title,
-    img,
-    discription,
-    location,
-    price,
-    saleprice,
-  });
+  if (id) {
+    await orders.update(
+      { title,
+        img,
+        discription,
+        location,
+        price,
+        saleprice, },
+      { where: {id} }
+      );
+  } else {
+    await orders.create({
+      title,
+      img,
+      discription,
+      location,
+      price,
+      saleprice,
+    });
+  }
 
   res.redirect('cardadmin');
 });
